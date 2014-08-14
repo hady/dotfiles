@@ -1,0 +1,76 @@
+" [Vundle]:
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+
+" Plugins:
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim' " Vundle (required)
+Plugin 'chriskempson/base16-vim' " Base16 Vim
+Plugin 'https://github.com/altercation/vim-colors-solarized.git' " Solarized
+Plugin 'https://github.com/wincent/Command-T.git' " Command-T
+
+call vundle#end()
+
+" [General]:
+set shell=/bin/bash
+set history=20
+set title
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set guioptions-=T " Hide toolbar
+
+" Visual highlighting and status settings.
+syntax on
+filetype plugin indent on
+set number
+set ruler
+set showmatch
+set matchtime=5
+set showmode
+set showcmd
+
+" Color Scheme
+if has('gui_running')
+  set background=light
+else
+  set background=dark
+endif
+colorscheme solarized
+
+" Line length, indentation, and wrapping settings.
+set textwidth=0
+set nowrap
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+set smarttab
+set autoindent
+
+" Maintain more context around the cursor.
+set scrolloff=3
+
+" Completion settings.
+" Let completion behave similarly to a shell
+" i.e. complete only up to the point of ambiguity
+" while still showing you what your options are.
+set wildmenu
+set wildmode=list:longest
+
+" Search settings.
+set smartcase " Case sensitive when expression contains uppercase...
+set ignorecase  " ...case insensitive matching otherwise.
+set hlsearch " Highlight search terms...
+set incsearch " ...dynamically as they are typed.
+
+" Disable Ex mode binding.
+nnoremap Q <nop>
+
+" Tab mappings.
+nmap <C-t> <Esc>:tabnew<CR>
+nmap <C-F4> <Esc>:tabclose<CR>
+map <C-Tab> :tabnext<CR>
+map <C-S-Tab> :tabprevious<CR>
+imap <C-Tab> <Esc>:tabnext<CR>
+imap <C-S-Tab> <Esc>:tabprevious<CR>

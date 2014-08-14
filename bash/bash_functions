@@ -1,0 +1,32 @@
+# ~/.bash_functions: Function definitions.
+# see /usr/share/doc/bash-doc/examples (in the bash-doc package)
+# for examples
+
+# Easily scp a file back and from the host you're connecting from
+scp_to_client () { scp $@ ${SSH_CLIENT%% *}:Bureau/; }
+scp_from_client (){ scp ${SSH_CLIENT%% *}:$@ .; }
+
+# Change directories and view files
+function cdl { cd $1; ls; }
+
+# Run mvn and notify with the build result and parameters
+mvn-notify() {
+  command mvn $* | \
+  perl -pe'$m|=/BUILD .*SUCCESS/; END {exit!$m}' && \
+  notify-send --icon=face-cool "`basename $(pwd)`: mvn $*" "Build SUCCESS" || \
+  notify-send --icon=face-crying "`basename $(pwd)`: mvn $*" "Build FAILED"
+}
+
+# Run command and notify with the command result and parameters
+function notify-command() {
+  command "$@"
+  local status=$?
+  if [ $status -ne 0 ]
+  then
+    notify-send --icon=face-crying "`basename $(pwd)`: $@ FAILED"
+  else
+    notify-send --icon=face-cool "`basename $(pwd)`: $@ SUCCESS"
+  fi
+  return $status
+}
+

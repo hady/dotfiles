@@ -1,0 +1,63 @@
+# ~/.bash_aliases: Alias definitions.
+# see /usr/share/doc/bash-doc/examples (in the bash-doc package)
+# for examples
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# some more ls aliases
+alias ll='ls -alF'                            # long list
+alias la='ls -A'                              # all but . and ..
+alias l='ls -CF'                              #
+alias lt='ls -ltr'                            # sort by date
+
+# interactive operation...
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias dirs='dirs -v'
+
+# default to human readable figures
+alias df='df -h'
+alias du='du -h'
+
+# misc :)
+alias less='less -r'                          # raw control characters
+alias whence='type -a'                        # where, of a sort
+
+# directory navigation
+alias pu='pushd .'                            # push current directory to top of stack
+alias po='popd .'                             # pop top of stack to current directory
+alias ..='cd ..'
+
+# gnome
+alias open='gnome-open'
+
+# murex code navigation
+export CDPATH=.:/src/new:/src/work/hzalek
+alias cb='cd `pwd | sed s,^/src/,/genoff\.,`' # change to the build directory 
+alias cs='cd `pwd | sed s,^/genoff\.,/src/,`' # change to the source directory
+
+# clipboard
+alias xclip='xclip -selection clipboard'      # copy stdin contents into clipboard
+
+# git
+alias ga='git add'
+alias gb='git branch'
+alias gc='git commit'
+alias gco='git checkout'
+alias gd='git diff'
+alias gl='git log'
+alias gs='git status'
+
+# mvn
+alias mvn=mvn-notify
