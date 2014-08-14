@@ -13,16 +13,18 @@ git clone https://github.com/hady/dotfiles.git ~/.dotfiles
 ```bash
 # Backup the originals.
 mkdir -p ~/.dotfiles/bak/bash
-mv ~/.bashrc ~/.dotfiles/bak/bash/bashrc
 mv ~/.bash_aliases ~/.dotfiles/bak/bash/bash_aliases
 mv ~/.bash_functions ~/.dotfiles/bak/bash/bash_functions
+mv ~/.bash_profile ~/.dotfiles/bak/bash/bash_profile
 mv ~/.bash_ps1 ~/.dotfiles/bak/bash/bash_ps1
+mv ~/.bashrc ~/.dotfiles/bak/bash/bashrc
 
 # Add symbolic links.
-ln -s ~/.dotfiles/bash/bashrc ~/.bashrc
 ln -s ~/.dotfiles/bash/bash_aliases ~/.bash_aliases
 ln -s ~/.dotfiles/bash/bash_functions ~/.bash_functions
+ln -s ~/.dotfiles/bash/bash_profile ~/.bash_profile
 ln -s ~/.dotfiles/bash/bash_ps1 ~/.bash_ps1
+ln -s ~/.dotfiles/bash/bashrc ~/.bashrc
 ```
 
 ### Vim
