@@ -19,10 +19,10 @@ mv ~/.bash_functions ~/.dotfiles/bak/bash/bash_functions
 mv ~/.bash_ps1 ~/.dotfiles/bak/bash/bash_ps1
 
 # Add symbolic links.
-ln -s ~/.dotfiles/bashrc ~/.bashrc
-ln -s ~/.dotfiles/bash_aliases ~/.bash_aliases
-ln -s ~/.dotfiles/bash_functions ~/.bash_functions
-ln -s ~/.dotfiles/bash_ps1 ~/.bash_ps1
+ln -s ~/.dotfiles/bash/bashrc ~/.bashrc
+ln -s ~/.dotfiles/bash/bash_aliases ~/.bash_aliases
+ln -s ~/.dotfiles/bash/bash_functions ~/.bash_functions
+ln -s ~/.dotfiles/bash/bash_ps1 ~/.bash_ps1
 ```
 
 ### Vim
