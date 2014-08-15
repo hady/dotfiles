@@ -6,7 +6,7 @@ if [ -x /usr/bin/dircolors ]; then
   alias ls='ls --color=auto'
 else
   export CLICOLOR=1
-  export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+  #export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 fi
 
 alias grep='grep --color=auto'
