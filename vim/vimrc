@@ -9,11 +9,13 @@ Plugin 'gmarik/Vundle.vim' " Vundle (required)
 Plugin 'chriskempson/base16-vim' " Base16 Vim
 Plugin 'https://github.com/altercation/vim-colors-solarized.git' " Solarized
 Plugin 'https://github.com/wincent/Command-T.git' " Command-T
+Plugin 'https://github.com/sjbach/lusty.git' " LustyJuggler
 Plugin 'https://github.com/msanders/snipmate.vim.git' " snipMate
 Plugin 'https://github.com/scrooloose/nerdcommenter.git' " NERDCommenter
 Plugin 'https://github.com/vim-scripts/supertab.git' " SuperTab
 Plugin 'https://github.com/tpope/vim-fugitive.git' " Fugitive
 Plugin 'https://github.com/tpope/vim-surround.git' " Surround
+Plugin 'https://github.com/tpope/vim-repeat.git' " Repeat.vim
 call vundle#end()
 
 " [General]
@@ -22,6 +24,7 @@ set history=100
 set undolevels=100
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set hidden
 
 " [Command-Line]
 set wildmenu
@@ -41,6 +44,8 @@ set visualbell
 set noerrorbells
 set title
 set guioptions-=T " Hide toolbar.
+set list " Highlight tabs, trailing whitespace and invisible spaces.
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
 " [Color Scheme]
 if has('gui_running')
@@ -53,7 +58,7 @@ colorscheme solarized
 " [Text]
 set textwidth=0
 set nowrap " Don't wrap lines.
-set tabstop=2 " A tabstop is 2 spaces.
+set tabstop=2 " A tab is 2 spaces.
 set softtabstop=2
 set shiftwidth=2 " Number of spaces when using autoindenting.
 set shiftround " Use multiple of shiftwidth when indenting with '<' and '>'.
