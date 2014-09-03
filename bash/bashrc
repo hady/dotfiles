@@ -21,9 +21,20 @@ shopt -s checkwinsize
 # Make less more friendly for non-text input files, see lesspipe(1).
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# Alias definitions.
-if [ -f ~/.bash_aliases ]; then
-  . ~/.bash_aliases
+# Privilege Homebrew binaries.
+if hash brew 2>/dev/null && [ -d "$(brew --prefix)/bin" ]; then
+  export PATH="$(brew --prefix)/bin:$PATH"
+fi
+if hash brew 2>/dev/null && [ -d "$(brew --prefix)/share/man" ]; then
+  export MANPATH="$(brew --prefix)/share/man:$MANPATH"
+fi
+
+# Privilege Homebrew's GNU coreutils.
+if hash brew 2>/dev/null && [ -d "$(brew --prefix coreutils)/libexec/gnubin" ]; then
+  export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+fi
+if hash brew 2>/dev/null && [ -d "$(brew --prefix coreutils)/libexec/gnuman" ]; then
+  export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
 fi
 
 # Bash completion.
@@ -31,6 +42,11 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
   . /etc/bash_completion
 elif hash brew 2>/dev/null && [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
+fi
+
+# Alias definitions.
+if [ -f ~/.bash_aliases ]; then
+  . ~/.bash_aliases
 fi
 
 # Function definitions.

@@ -1,6 +1,4 @@
 # ~/.bash_functions: Function definitions.
-# See /usr/share/doc/bash-doc/examples (in the bash-doc package)
-# for examples.
 
 # Easily scp a file back and from the host you're connecting from.
 scp_to_client () { scp $@ ${SSH_CLIENT%% *}:Bureau/; }
