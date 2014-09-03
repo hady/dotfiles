@@ -36,16 +36,16 @@ syntax on
 filetype plugin indent on
 set number " Always show line numbers.
 set ruler
-set showmatch " Show matching parentheses.
 set matchtime=5
 set showmode
 set showcmd
-set visualbell
+set showmatch " Briefly show matching bracket if visible.
+set novisualbell
 set noerrorbells
 set title
-set guioptions-=T " Hide toolbar.
 set list " Highlight tabs, trailing whitespace and invisible spaces.
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
+set guioptions-=T " Hide toolbar.
 
 " [Color Scheme]
 if has('gui_running')
@@ -65,11 +65,40 @@ set shiftround " Use multiple of shiftwidth when indenting with '<' and '>'.
 set expandtab
 set smarttab " Insert tabs on the start of a line according to shiftwidth, not tabstop.
 set autoindent
+set smartindent
 set copyindent " Copy the previous indentation on autoindenting.
 set backspace=indent,eol,start " Allow backspacing over everything.
 
+" C/C++
+let c_syntax_for_h=1
+autocmd FileType c,cpp setlocal cindent
+autocmd FileType c,cpp setlocal tabstop=3
+autocmd FileType c,cpp setlocal shiftwidth=3
+
+" Python
+autocmd FileType py setlocal tabstop=4
+autocmd FileType py setlocal shiftwidth=4
+
+" CMake
+autocmd FileType cmake setlocal tabstop=3
+autocmd FileType cmake setlocal shiftwidth=3
+
+" Binary
+augroup Binary " vim -b : edit binary using xxd-format.
+  au!
+  au BufReadPre  *.bin let &bin=1
+  au BufReadPost *.bin if &bin | %!xxd
+  au BufReadPost *.bin set ft=xxd | endif
+  au BufWritePre *.bin if &bin | %!xxd -r
+  au BufWritePre *.bin endif
+  au BufWritePost *.bin if &bin | %!xxd
+  au BufWritePost *.bin set nomod | endif
+augroup END
+
 " [Navigation]
 set scrolloff=3 " Maintain more context around the cursor.
+nnoremap <C-e> 3<C-e> " Scroll the viewport faster.
+nnoremap <C-y> 3<C-y>
 
 " [Search]
 set smartcase " Case sensitive when expression contains uppercase...
@@ -98,3 +127,9 @@ imap <C-S-Tab> <Esc>:tabprevious<CR>
 
 " Switch to paste mode.
 set pastetoggle=<F2>
+
+" [Menu]
+" Add menu items for copying the filename
+:amenu .350 &File.Cop&y.&Base\ Name :let @+=expand("%:t")<CR>
+:amenu .350 &File.Cop&y.&Dir\ Name :let @+=expand("%:p:h")<CR>
+:amenu .350 &File.Cop&y.Full\ &Path :let @+=expand("%:p")<CR>
