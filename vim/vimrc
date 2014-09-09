@@ -16,6 +16,8 @@ Plugin 'https://github.com/vim-scripts/supertab.git' " SuperTab
 Plugin 'https://github.com/tpope/vim-fugitive.git' " Fugitive
 Plugin 'https://github.com/tpope/vim-surround.git' " Surround
 Plugin 'https://github.com/tpope/vim-repeat.git' " Repeat.vim
+Plugin 'https://github.com/danro/rename.vim.git' " Rename.vim
+Plugin 'https://github.com/davidoc/taskpaper.vim.git' " TaskPaper
 call vundle#end()
 
 " [General]
@@ -68,6 +70,9 @@ set autoindent
 set smartindent
 set copyindent " Copy the previous indentation on autoindenting.
 set backspace=indent,eol,start " Allow backspacing over everything.
+
+" General
+autocmd BufEnter * lcd %:p:h
 
 " C/C++
 let c_syntax_for_h=1
