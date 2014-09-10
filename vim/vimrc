@@ -18,6 +18,7 @@ Plugin 'https://github.com/tpope/vim-surround.git' " Surround
 Plugin 'https://github.com/tpope/vim-repeat.git' " Repeat.vim
 Plugin 'https://github.com/danro/rename.vim.git' " Rename.vim
 Plugin 'https://github.com/davidoc/taskpaper.vim.git' " TaskPaper
+Plugin 'https://github.com/dag/vim2hs.git' " vim2hs
 call vundle#end()
 
 " [General]
