@@ -30,19 +30,19 @@ alias du='du -h'
 alias less='less -r'                          # raw control characters
 alias whence='type -a'                        # where, of a sort
 
-# Directory navigation
+# Directory navigation.
 alias pu='pushd .'                            # push current directory to top of stack
 alias po='popd .'                             # pop top of stack to current directory
 alias ..='cd ..'
 
-# Clipboard
+# Clipboard.
 if hash pbcopy 2>/dev/null; then
   alias clip="pbcopy"
 elif hash xclip 2>/dev/null; then
   alias clip='xclip -selection clipboard'
 fi
 
-# Git
+# Git.
 if hash git 2>/dev/null; then
   alias ga='git add'
   alias gb='git branch'
@@ -53,12 +53,12 @@ if hash git 2>/dev/null; then
   alias gs='git status'
 fi
 
-# Maven
+# Maven.
 if hash mvn 2>/dev/null; then
   alias mvn=mvn-notify
 fi
 
-# Generic Colouriser
+# Generic Colouriser.
 if hash grc 2>/dev/null; then
   alias colourify="grc -es --colour=auto"
   alias configure='colourify ./configure'
@@ -73,3 +73,17 @@ if hash grc 2>/dev/null; then
   alias ping='colourify ping'
   alias traceroute='colourify /usr/sbin/traceroute'
 fi
+
+# Open files and directories.
+case "$OSTYPE" in
+cygwin*)
+  alias open="cmd /c start"
+  ;;
+linux*)
+  alias start="xdg-open"
+  alias open="xdg-open"
+  ;;
+darwin*)
+  alias start="open"
+  ;;
+esac
