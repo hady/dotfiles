@@ -112,7 +112,7 @@ set ignorecase  " ...case insensitive matching otherwise.
 set hlsearch " Highlight search terms...
 set incsearch " ...dynamically as they are typed.
 
-" [Bindings]
+" [Keyboard Bindings]
 nnoremap Q <nop> " Disable Ex mode binding.
 let mapleader="," " Change the mapleader from '\' to ','.
 
@@ -131,8 +131,17 @@ map <C-S-Tab> :tabprevious<CR>
 imap <C-Tab> <Esc>:tabnext<CR>
 imap <C-S-Tab> <Esc>:tabprevious<CR>
 
+" Copy & Paste mappings.
+nmap <C-S-v> "+gP
+imap <C-S-v> <ESC><C-A-v>i
+vmap <C-S-c> "+y
+
 " Switch to paste mode.
 set pastetoggle=<F2>
+
+" [Mouse Settings]
+set mouse=a " Enable the mouse.
+set mousemodel=popup " Right mouse button pops up a menu.
 
 " [Menu]
 " Add menu items for copying the filename
