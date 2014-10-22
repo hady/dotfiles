@@ -49,6 +49,7 @@ set title
 set list " Highlight tabs, trailing whitespace and invisible spaces.
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 set guioptions-=T " Hide toolbar.
+set laststatus=2 " Always show a status line.
 
 " [Color Scheme]
 if has('gui_running')
