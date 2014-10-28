@@ -134,7 +134,7 @@ imap <C-S-Tab> <Esc>:tabprevious<CR>
 
 " Copy & Paste mappings.
 nmap <C-S-v> "+gP
-imap <C-S-v> <ESC><C-A-v>i
+imap <C-S-v> <ESC><C-S-v>i
 vmap <C-S-c> "+y
 
 " Switch to paste mode.
