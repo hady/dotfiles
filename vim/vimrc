@@ -19,6 +19,7 @@ Plugin 'https://github.com/tpope/vim-repeat.git' " Repeat.vim
 Plugin 'https://github.com/danro/rename.vim.git' " Rename.vim
 Plugin 'https://github.com/davidoc/taskpaper.vim.git' " TaskPaper
 Plugin 'https://github.com/dag/vim2hs.git' " vim2hs
+Plugin 'https://github.com/kelan/gyp.vim.git' " gyp.vim
 call vundle#end()
 
 " [General]
@@ -134,7 +135,7 @@ imap <C-S-Tab> <Esc>:tabprevious<CR>
 
 " Copy & Paste mappings.
 nmap <C-S-v> "+gP
-imap <C-S-v> <ESC><C-S-v>i
+imap <C-S-v> <ESC>"+gpi
 vmap <C-S-c> "+y
 
 " Switch to paste mode.
