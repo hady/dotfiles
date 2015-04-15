@@ -20,10 +20,8 @@ mv ~/.bash_ps1 ~/.dotfiles/bak/bash/bash_ps1
 mv ~/.bashrc ~/.dotfiles/bak/bash/bashrc
 
 # Add symbolic links.
-ln -s ~/.dotfiles/bash/bash_aliases ~/.bash_aliases
-ln -s ~/.dotfiles/bash/bash_functions ~/.bash_functions
+ln -s ~/.dotfiles/bash ~/.bash
 ln -s ~/.dotfiles/bash/bash_profile ~/.bash_profile
-ln -s ~/.dotfiles/bash/bash_ps1 ~/.bash_ps1
 ln -s ~/.dotfiles/bash/bashrc ~/.bashrc
 ```
 
