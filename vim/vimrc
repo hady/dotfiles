@@ -20,6 +20,7 @@ Plugin 'https://github.com/danro/rename.vim.git' " Rename.vim
 Plugin 'https://github.com/davidoc/taskpaper.vim.git' " TaskPaper
 Plugin 'https://github.com/dag/vim2hs.git' " vim2hs
 Plugin 'https://github.com/kelan/gyp.vim.git' " gyp.vim
+Plugin 'rizzatti/dash.vim' " dash.vim
 call vundle#end()
 
 " [General]
