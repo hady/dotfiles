@@ -1,5 +1,5 @@
-# Perforce Alias definitions.
+# Perforce.
 
-if hash p4 2>/dev/null; then
-  alias p4o='p4 opened'
-fi
+hash p4 2>/dev/null || return
+
+alias p4o='p4 opened'

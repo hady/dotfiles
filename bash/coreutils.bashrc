@@ -1,4 +1,4 @@
-# Alias definitions.
+# Coreutils.
 
 # Some more ls aliases.
 alias ll='ls -alF'                            # long list
