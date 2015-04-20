@@ -134,11 +134,6 @@ map <C-S-Tab> :tabprevious<CR>
 imap <C-Tab> <Esc>:tabnext<CR>
 imap <C-S-Tab> <Esc>:tabprevious<CR>
 
-" Copy & Paste mappings.
-nmap <C-S-v> "+gP
-imap <C-S-v> <ESC>"+gpi
-vmap <C-S-c> "+y
-
 " Switch to paste mode.
 set pastetoggle=<F2>
 
