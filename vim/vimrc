@@ -80,6 +80,10 @@ set backspace=indent,eol,start " Allow backspacing over everything.
 " General
 autocmd BufEnter * lcd %:p:h
 
+" Asciidoc
+let g:vim_asciidoc_folding_disabled=1 " Disable folding.
+let g:vim_asciidoc_initial_foldlevel=3 " Set default fold level.
+
 " C/C++
 let c_syntax_for_h=1
 autocmd FileType c,cpp setlocal cindent
