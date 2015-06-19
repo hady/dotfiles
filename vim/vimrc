@@ -71,11 +71,12 @@ set softtabstop=2
 set shiftwidth=2 " Number of spaces when using autoindenting.
 set shiftround " Use multiple of shiftwidth when indenting with '<' and '>'.
 set expandtab
-set smarttab " Insert tabs on the start of a line according to shiftwidth, not tabstop.
+set smarttab " Use shiftwidth instead of tabstop when inserting tabs.
 set autoindent
 set smartindent
 set copyindent " Copy the previous indentation on autoindenting.
 set backspace=indent,eol,start " Allow backspacing over everything.
+let &colorcolumn="80,".join(range(120,999),",")
 
 " General
 autocmd BufEnter * lcd %:p:h
