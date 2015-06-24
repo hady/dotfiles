@@ -133,7 +133,7 @@ nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 " Clear highlighted searches.
-nmap <silent> ,/ :nohlsearch<CR>
+nmap <silent> <leader>/ :nohlsearch<CR>
 
 " Tab mappings.
 nmap <C-t> <Esc>:tabnew<CR>
@@ -143,8 +143,10 @@ map <C-S-Tab> :tabprevious<CR>
 imap <C-Tab> <Esc>:tabnext<CR>
 imap <C-S-Tab> <Esc>:tabprevious<CR>
 
-" Switch to paste mode.
-set pastetoggle=<F2>
+" Copy and paste.
+source $VIMRUNTIME/mswin.vim
+behave mswin
+set pastetoggle=<F2> " Switch to paste mode.
 
 " [Mouse Settings]
 set mouse=a " Enable the mouse.
