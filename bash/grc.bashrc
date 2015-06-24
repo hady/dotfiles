@@ -6,7 +6,7 @@ hash grc 2>/dev/null || return
 if hash brew 2>/dev/null && [ -f $(brew --prefix)/etc/grc.bashrc ]; then
   . $(brew --prefix)/etc/grc.bashrc
 else
-  alias colourify="$GRC -es --colour=auto"
+  alias colourify="grc -es --colour=auto"
   alias configure='colourify ./configure'
   alias diff='colourify diff'
   alias make='colourify make'
