@@ -22,6 +22,7 @@ Plugin 'https://github.com/dag/vim2hs.git' " vim2hs
 Plugin 'https://github.com/kelan/gyp.vim.git' " gyp.vim
 Plugin 'rizzatti/dash.vim' " dash.vim
 Plugin 'mjakl/vim-asciidoc' " vim-asciidoc
+Plugin 'easymotion/vim-easymotion' " EasyMotion
 call vundle#end()
 
 " [General]
