@@ -8,7 +8,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim' " Vundle (required)
 Plugin 'chriskempson/base16-vim' " Base16 Vim
 Plugin 'https://github.com/altercation/vim-colors-solarized.git' " Solarized
-Plugin 'https://github.com/wincent/Command-T.git' " Command-T
+Plugin 'https://github.com/kien/ctrlp.vim.git' " ctrlp
 Plugin 'https://github.com/sjbach/lusty.git' " LustyJuggler
 Plugin 'https://github.com/msanders/snipmate.vim.git' " snipMate
 Plugin 'https://github.com/scrooloose/nerdcommenter.git' " NERDCommenter
