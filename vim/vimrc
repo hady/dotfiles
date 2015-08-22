@@ -23,6 +23,9 @@ Plugin 'https://github.com/kelan/gyp.vim.git' " gyp.vim
 Plugin 'rizzatti/dash.vim' " dash.vim
 Plugin 'mjakl/vim-asciidoc' " vim-asciidoc
 Plugin 'easymotion/vim-easymotion' " EasyMotion
+Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-sensible'
+Plugin 'scrooloose/syntastic'
 call vundle#end()
 
 " [General]
@@ -161,3 +164,6 @@ set mousemodel=popup " Right mouse button pops up a menu.
 :amenu .350 &File.Cop&y.&Base\ Name :let @+=expand("%:t")<CR>
 :amenu .350 &File.Cop&y.&Dir\ Name :let @+=expand("%:p:h")<CR>
 :amenu .350 &File.Cop&y.Full\ &Path :let @+=expand("%:p")<CR>
+
+" [Syntastic]
+let g:syntastic_always_populate_loc_list=1
