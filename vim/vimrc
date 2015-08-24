@@ -5,27 +5,27 @@ set rtp+=~/.vim/bundle/Vundle.vim
 
 " Plugins:
 call vundle#begin()
-Plugin 'gmarik/Vundle.vim' " Vundle (required)
-Plugin 'chriskempson/base16-vim' " Base16 Vim
-Plugin 'https://github.com/altercation/vim-colors-solarized.git' " Solarized
-Plugin 'https://github.com/kien/ctrlp.vim.git' " ctrlp
-Plugin 'https://github.com/sjbach/lusty.git' " LustyJuggler
-Plugin 'https://github.com/msanders/snipmate.vim.git' " snipMate
-Plugin 'https://github.com/scrooloose/nerdcommenter.git' " NERDCommenter
-Plugin 'https://github.com/vim-scripts/supertab.git' " SuperTab
-Plugin 'https://github.com/tpope/vim-fugitive.git' " Fugitive
-Plugin 'https://github.com/tpope/vim-surround.git' " Surround
-Plugin 'https://github.com/tpope/vim-repeat.git' " Repeat.vim
-Plugin 'https://github.com/danro/rename.vim.git' " Rename.vim
-Plugin 'https://github.com/davidoc/taskpaper.vim.git' " TaskPaper
-Plugin 'https://github.com/dag/vim2hs.git' " vim2hs
-Plugin 'https://github.com/kelan/gyp.vim.git' " gyp.vim
-Plugin 'rizzatti/dash.vim' " dash.vim
-Plugin 'mjakl/vim-asciidoc' " vim-asciidoc
-Plugin 'easymotion/vim-easymotion' " EasyMotion
-Plugin 'tpope/vim-unimpaired'
-Plugin 'tpope/vim-sensible'
-Plugin 'scrooloose/syntastic'
+Plugin 'https://github.com/gmarik/Vundle.vim.git'
+Plugin 'https://github.com/chriskempson/base16-vim.git'
+Plugin 'https://github.com/altercation/vim-colors-solarized.git'
+Plugin 'https://github.com/kien/ctrlp.vim.git'
+Plugin 'https://github.com/sjbach/lusty.git'
+Plugin 'https://github.com/msanders/snipmate.vim.git'
+Plugin 'https://github.com/scrooloose/nerdcommenter.git'
+Plugin 'https://github.com/vim-scripts/supertab.git'
+Plugin 'https://github.com/tpope/vim-fugitive.git'
+Plugin 'https://github.com/tpope/vim-surround.git'
+Plugin 'https://github.com/tpope/vim-repeat.git'
+Plugin 'https://github.com/danro/rename.vim.git'
+Plugin 'https://github.com/davidoc/taskpaper.vim.git'
+Plugin 'https://github.com/dag/vim2hs.git'
+Plugin 'https://github.com/kelan/gyp.vim.git'
+Plugin 'https://github.com/rizzatti/dash.vim.git'
+Plugin 'https://github.com/mjakl/vim-asciidoc.git'
+Plugin 'https://github.com/easymotion/vim-easymotion.git'
+Plugin 'https://github.com/tpope/vim-unimpaired.git'
+Plugin 'https://github.com/tpope/vim-sensible.git'
+Plugin 'https://github.com/scrooloose/syntastic.git'
 call vundle#end()
 
 " [General]
