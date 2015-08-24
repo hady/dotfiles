@@ -97,8 +97,12 @@ au FileType gitcommit setlocal textwidth=72
 " C/C++
 let c_syntax_for_h=1
 autocmd FileType c,cpp setlocal cindent
-autocmd FileType c,cpp setlocal tabstop=3
-autocmd FileType c,cpp setlocal shiftwidth=3
+autocmd FileType c,cpp setlocal tabstop=2
+autocmd FileType c,cpp setlocal shiftwidth=2
+
+" Java
+autocmd FileType java setlocal tabstop=2
+autocmd FileType java setlocal shiftwidth=2
 
 " Python
 autocmd FileType py setlocal tabstop=4
