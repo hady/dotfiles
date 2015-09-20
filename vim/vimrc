@@ -108,6 +108,11 @@ autocmd FileType c,cpp setlocal cindent
 autocmd FileType c,cpp setlocal tabstop=2
 autocmd FileType c,cpp setlocal shiftwidth=2
 
+if executable('clang++')
+  let g:syntastic_cpp_compiler = 'clang++'
+  let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+endif
+
 " Java
 autocmd FileType java setlocal tabstop=2
 autocmd FileType java setlocal shiftwidth=2
