@@ -44,12 +44,14 @@ elif hash brew 2>/dev/null && [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
 
+BASH_DIR="$(dirname $(readlink -f "${BASH_SOURCE[0]}"))"
+
 # Tool-specific aliases and functions.
-for f in ~/.bash/*.bashrc; do
+for f in "${BASH_DIR}"/*.bashrc; do
   . $f
 done
 
 # PS1 definition.
-if [ -f ~/.bash/bash_ps1 ] ; then
-  . ~/.bash/bash_ps1
+if [ -f "${BASH_DIR}"/bash_ps1 ] ; then
+  . "${BASH_DIR}"/bash_ps1
 fi
