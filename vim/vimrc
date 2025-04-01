@@ -1,30 +1,6 @@
 set nocompatible
 filetype off
 
-" [Vundle]
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'https://github.com/gmarik/Vundle.vim.git' " Vundle (required)
-Plugin 'https://github.com/altercation/vim-colors-solarized.git'
-Plugin 'https://github.com/dag/vim2hs.git'
-Plugin 'https://github.com/danro/rename.vim.git'
-Plugin 'https://github.com/davidoc/taskpaper.vim.git'
-Plugin 'https://github.com/easymotion/vim-easymotion.git'
-Plugin 'https://github.com/kien/ctrlp.vim.git'
-Plugin 'https://github.com/mjakl/vim-asciidoc.git'
-Plugin 'https://github.com/msanders/snipmate.vim.git'
-Plugin 'https://github.com/rizzatti/dash.vim.git'
-Plugin 'https://github.com/scrooloose/nerdcommenter.git'
-Plugin 'https://github.com/scrooloose/syntastic.git'
-Plugin 'https://github.com/sjbach/lusty.git'
-Plugin 'https://github.com/tpope/vim-fugitive.git'
-Plugin 'https://github.com/tpope/vim-repeat.git'
-Plugin 'https://github.com/tpope/vim-sensible.git'
-Plugin 'https://github.com/tpope/vim-surround.git'
-Plugin 'https://github.com/tpope/vim-unimpaired.git'
-Plugin 'https://github.com/vim-scripts/supertab.git'
-call vundle#end()
-
 syntax on
 filetype plugin indent on
 
@@ -110,11 +86,6 @@ nnoremap <C-y> 3<C-y>
 " [Mouse Settings]
 set mouse=a " Enable the mouse.
 set mousemodel=popup " Right mouse button pops up a menu.
-
-" [Syntastic]
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
