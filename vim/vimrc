@@ -7,6 +7,54 @@ Plug 'tpope/vim-sensible'
 
 call plug#end()
 
+" [Theme]
 set background=dark
 set termguicolors  " Required for Solarized.
 colorscheme solarized
+
+" [Buffers]
+set autochdir  " Automatically change current working dir.
+set hidden
+
+" [Command-Line]
+set wildmenu
+set wildmode=list:longest
+set wildignore=*.swp,*.bak,*.pyc,*.class
+
+" [Navigation]
+set scrolloff=3  " Maintain more context around the cursor
+
+" [Search]
+set smartcase  " Case sensitive when expression contains uppercase...
+set ignorecase  " ...case insensitive matching otherwise.
+set hlsearch  " Highlight search terms...
+set incsearch  " ...dynamically as they are typed.
+
+" [Visual]
+set number  " Always show line numbers.
+set ruler
+set matchtime=5
+set showmode
+set showcmd
+set showmatch  " Briefly show matching bracket if visible.
+set visualbell
+set noerrorbells
+set title
+set list  " Highlight tabs, trailing whitespace, and invisible spaces.
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
+set laststatus=2  " Always show a status line.
+
+" [Text]
+set textwidth=0
+set nowrap  " Don't wrap lines.
+set tabstop=2  " A tab is 2 spaces.
+set softtabstop=2
+set shiftwidth=2  " Number of spaces when using autoindenting.
+set shiftround  " Use multiple of shiftwidth when indenting with '<' and '>'.
+set expandtab
+set smarttab  " Use shiftwidth instead of tabstop when inserting tabs.
+set autoindent
+set smartindent
+set copyindent  " Copy the previous indentation on autoindenting.
+set backspace=indent,eol,start  " Allow backspacing over everything.
+let &colorcolumn="80,".join(range(120,999),",")
