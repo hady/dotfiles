@@ -27,4 +27,5 @@ fi
 
 # Configure fzf.
 source /opt/homebrew/opt/fzf/shell/key-bindings.zsh
+source /opt/homebrew/opt/fzf/shell/completion.zsh
 export FZF_DEFAULT_OPTS="--multi --preview 'bat --color=always {}'"
