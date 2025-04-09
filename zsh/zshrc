@@ -24,4 +24,7 @@ if ! zplug check --verbose; then
     echo; zplug install
   fi
 fi
-fastboot() { if $(ek status | grep -q '"status": {}'); then /opt/facebook/maui-cli/bin/platform-tools/fastboot "$@"; else /var/folders/rn/1m_ymgrd1s124cpt3k8t00hr0000gn/0/ek/android/fastboot "$@"; fi } # EK_RC_ENV_hRtVBQ556GKN
+
+# Configure fzf.
+source /opt/homebrew/opt/fzf/shell/key-bindings.zsh
+export FZF_DEFAULT_OPTS="--preview 'bat --color=always {}'"
