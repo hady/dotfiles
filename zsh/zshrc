@@ -1,0 +1,27 @@
+# added by setup_fb4a.sh
+export ANDROID_SDK=/opt/android_sdk
+export ANDROID_NDK_REPOSITORY=/opt/android_ndk
+export ANDROID_HOME=${ANDROID_SDK}
+export PATH=${PATH}:${ANDROID_SDK}/emulator:${ANDROID_SDK}/tools:${ANDROID_SDK}/tools/bin:${ANDROID_SDK}/platform-tools
+
+##### zplug.
+export ZPLUG_HOME="$(brew --prefix)/opt/zplug"
+source "${ZPLUG_HOME}/init.zsh"
+
+zplug "mafredri/zsh-async", from:github
+zplug "zsh-users/zsh-autosuggestions", from:github
+zplug "zdharma/fast-syntax-highlighting", from:github, defer:2
+zplug "softmoth/zsh-vim-mode", from:github
+zplug "MichaelAquilina/zsh-you-should-use"
+zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
+
+zplug load
+
+# Install missing plugins.
+if ! zplug check --verbose; then
+  printf "Install missing zplug plugins? [y/N]: "
+  if read -q; then
+    echo; zplug install
+  fi
+fi
+fastboot() { if $(ek status | grep -q '"status": {}'); then /opt/facebook/maui-cli/bin/platform-tools/fastboot "$@"; else /var/folders/rn/1m_ymgrd1s124cpt3k8t00hr0000gn/0/ek/android/fastboot "$@"; fi } # EK_RC_ENV_hRtVBQ556GKN
