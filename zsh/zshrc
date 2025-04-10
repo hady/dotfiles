@@ -20,8 +20,9 @@ if ! zplug check --verbose; then
 fi
 
 ##### fzf.
-source /opt/homebrew/opt/fzf/shell/key-bindings.zsh
-source /opt/homebrew/opt/fzf/shell/completion.zsh
+
+# Set up key bindings and fuzzy completion.
+source <(fzf --zsh)
 
 # Enable multi-select mode.
 export FZF_DEFAULT_OPTS="--multi"
