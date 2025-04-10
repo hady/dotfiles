@@ -27,6 +27,9 @@ source <(fzf --zsh)
 # Enable multi-select mode.
 export FZF_DEFAULT_OPTS="--multi"
 
+# Use `fd` since it's faster than `find` and ignore git hidden files.
+export FZF_DEFAULT_COMMAND="fd --type f"
+
 # Preview file content using `bat`.
 export FZF_CTRL_T_OPTS="
   --walker-skip .git,node_modules,target
