@@ -3,12 +3,21 @@ call plug#begin()
 
 Plug 'dense-analysis/ale'
 Plug 'ericbn/vim-solarized'
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'rust-lang/rust.vim'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
 
 call plug#end()
+
+" [General]
+
+" The below two lines are set by one of the above plugins (I forget which but
+" we include them here just in case it's every disabled.
+syntax enable
+filetype plugin indent on
 
 " [Theme]
 set background=dark
@@ -65,3 +74,20 @@ set smartindent
 set copyindent  " Copy the previous indentation on autoindenting.
 set backspace=indent,eol,start  " Allow backspacing over everything.
 let &colorcolumn="80,".join(range(120,999),",")
+
+" [CoC]
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" [rust.vim]
+let g:rustfmt_autosave = 1
+let g:rustfmt_emit_files = 1
+let g:rustfmt_fail_silently = 0
