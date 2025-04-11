@@ -4,6 +4,7 @@ call plug#begin()
 Plug 'dense-analysis/ale'
 Plug 'ericbn/vim-solarized'
 Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
