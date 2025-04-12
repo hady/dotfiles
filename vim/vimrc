@@ -76,16 +76,56 @@ set backspace=indent,eol,start  " Allow backspacing over everything.
 let &colorcolumn="80,".join(range(120,999),",")
 
 " [CoC]
+
+" Shorter the updatetime from the default of 4000 ms to reduce delays and
+" improve the experience.
+set updatetime=300
+
+" Always show the signcolumn. Not doing so would shift the text each time
+" diagnostics appear or are resolved.
+set signcolumn=yes
+"
+" Use <CR> to accept a selected completion item or notify coc.nvim to format.
+" NOTE: The <C-g>u mapping breaks current undo.
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" Use <c-space> to trigger completion.
 if has('nvim')
   inoremap <silent><expr> <c-space> coc#refresh()
 else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
+" Use `[g` and `]g` to navigate diagnostics. Use `:CocDiagnostics` to get all
+" diagnostics in the current buffer.
+nmap <silent><nowait> [g <Plug>(coc-diagnostic-prev)
+nmap <silent><nowait> ]g <Plug>(coc-diagnostic-next)
+
+" Code navigation mappings.
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
+" Rename symbol mapping.
+nmap <leader>rn <Plug>(coc-rename)
+
+" Format selection mapping.
+xmap <leader>f <Plug>(coc-format-selected)
+nmap <leader>f <Plug>(coc-format-selected)
+
+" Remap keys for applying code actions at the cursor position.
+nmap <leader>ac <Plug>(coc-codeaction-cursor)
+" Remap keys for applying code actions that affect whole buffer.
+nmap <leader>as <Plug>(coc-codeaction-source)
+" Apply the preferred quickfix to fix the diagnostic on the current line.
+nmap <leader>qf <Plug>(coc-fix-current)
+
+" Remap keys for applying refactor code actions.
+nmap <silent> <leader>re <Plug>(coc-codeaction-refactor)
+xmap <silent> <leader>r <Plug>(coc-codeaction-refactor-selected)
+nmap <silent> <leader>r <Plug>(coc-codeaction-refactor-selected)
 
 " [rust.vim]
 let g:rustfmt_autosave = 1
