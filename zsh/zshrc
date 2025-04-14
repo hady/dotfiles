@@ -46,3 +46,6 @@ export FZF_CTRL_R_OPTS="
 export FZF_ALT_C_OPTS="
   --walker-skip .git,node_modules,target
   --preview 'tree -C {}'"
+
+##### 1Password.
+eval "$(op completion zsh)"; compdef _op op
