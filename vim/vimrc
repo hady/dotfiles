@@ -77,6 +77,14 @@ let &colorcolumn="80,".join(range(120,999),",")
 
 " [CoC]
 
+" Install missing extensions.
+let g:coc_global_extensions = [
+      \ 'coc-json',
+      \ 'coc-git',
+      \ 'coc-rust-analyzer',
+      \ 'coc-pyright',
+      \ ]
+
 " Shorter the updatetime from the default of 4000 ms to reduce delays and
 " improve the experience.
 set updatetime=300
