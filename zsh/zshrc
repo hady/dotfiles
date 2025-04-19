@@ -4,12 +4,13 @@ export ZPLUG_HOME="$(brew --prefix)/opt/zplug"
 source "${ZPLUG_HOME}/init.zsh"
 
 zplug "MichaelAquilina/zsh-you-should-use"
-zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
+zplug "romkatv/powerlevel10k", as:theme, depth:1
+zplug "plugins/git", from:oh-my-zsh
 
 # Load this in the following order to avoid conflicts.
 zplug "zsh-users/zsh-autosuggestions", from:github
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "softmoth/zsh-vim-mode", from:github
+zplug "jeffreytse/zsh-vi-mode"
 
 zplug load
 
