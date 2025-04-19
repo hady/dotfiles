@@ -1,13 +1,15 @@
 ##### zplug.
+
 export ZPLUG_HOME="$(brew --prefix)/opt/zplug"
 source "${ZPLUG_HOME}/init.zsh"
 
-zplug "mafredri/zsh-async", from:github
-zplug "zsh-users/zsh-autosuggestions", from:github
-zplug "zdharma/fast-syntax-highlighting", from:github, defer:2
-zplug "softmoth/zsh-vim-mode", from:github
 zplug "MichaelAquilina/zsh-you-should-use"
 zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
+
+# Load this in the following order to avoid conflicts.
+zplug "zsh-users/zsh-autosuggestions", from:github
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "softmoth/zsh-vim-mode", from:github
 
 zplug load
 
@@ -18,6 +20,15 @@ if ! zplug check --verbose; then
     echo; zplug install
   fi
 fi
+
+##### zsh-syntax-highlighting.
+
+ZSH_HIGHLIGHT_HIGHLIGHTERS+=(brackets)  # Highlight a few more elements.
+
+##### zsh-autosuggestions.
+
+# Change the highlight style which is otherwise not visible with Solarized.
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
 
 ##### fzf.
 
@@ -47,5 +58,11 @@ export FZF_ALT_C_OPTS="
   --walker-skip .git,node_modules,target
   --preview 'tree -C {}'"
 
+##### bat.
+
+alias rcat="$(which cat)"
+alias cat="$(which bat) -n"
+
 ##### 1Password.
+
 eval "$(op completion zsh)"; compdef _op op
